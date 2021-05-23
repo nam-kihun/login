@@ -30,7 +30,7 @@ Workspace는 SPA에서 각 앱들이 같은 모듈을 공유하고 서로를 참
 
 아래의 코드를 `package.json`에 추가한다. 이 파일이 들어있는 폴더를 워크스페이스 루트라고 부른다. 여기서는 워크스페이스 루트로 SPA프로젝트의 루트 폴더를 쓰며 여기에 `package.json`을 생성하거나 이미 있는 것을 사용한다. 이곳에서 앱들을 Workspace에 등록한다.
 
-```vue.js
+```javascript
 //package.json
 {
   "private": true
@@ -48,7 +48,7 @@ Workspaces 안에 사용할 프로젝트의 폴더를 등록한다. Workspace는
 <br>
 
 ### workspace-a/package.json:
-```vue.js
+```javascript
 //package.json
 {
   "name": "workspace-a",
@@ -60,7 +60,7 @@ Workspaces 안에 사용할 프로젝트의 폴더를 등록한다. Workspace는
 }
 ```
 ### workspace-b/package.json:
-```vue.js
+```javascript
 //package.json
 {
   "name": "workspace-b",
@@ -96,7 +96,11 @@ Workspaces 안에 사용할 프로젝트의 폴더를 등록한다. Workspace는
 
 `/node_modules/workspace-b`를 찾지 않도록 한다. 다른 패키지가 dependancy로 이것을 사용하지 않는 이상 없을 것이다.<br>
 
-이렇게 함으로써 `workspace-a`를 필요로 하는 `workspace-b`에 있는 파일은 워크스페이스에 있는 파일을 가져오게 되고 두 프로젝트에서 필요한 `cross-env`패키지도 워크스페이스에 들어가 있다. 주목할 점은 `workspace-a`가 심볼릭 링크를 통해서 `/node_modules/workspace-a`라는 가명을 가지는 것이다. 이 기능은 이것이 패키지로 필요할 때 일반적인 패키지로 보이게 하는 것이다. 또한 폴더 이름이 아닌 `/workspace-a/package.json#name`필드가 이용되는 것을 알아야 한다. 이것은 `/workspace-a/package.json`의 `name`필드가 `"pkg-a"`였고, 가명이 `/node_modules/pkg-a -> /workspace-a`을 따르는 것이다. 그렇게 하면 `/workspace-a`에 있는 코드를 `const pkgA = require("pkg-a");`을(또는 `import pkgA from "pkg-a";`) 사용해 import 할 수 있다는 것이다.
+이렇게 함으로써 `workspace-a`를 필요로 하는 `workspace-b`에 있는 파일은 워크스페이스에 있는 파일을 가져오게 되고 두 프로젝트에서 필요한 `cross-env`패키지도 워크스페이스에 들어가 있다.<br>
+주목할 점은 `workspace-a`가 심볼릭 링크를 통해서 `/node_modules/workspace-a`라는 가명을 가지는 것이다.<br> 
+이 기능은 이것이 패키지로 필요할 때 일반적인 패키지로 보이게 하는 것이다. 또한 폴더 이름이 아닌 `/workspace-a/package.json#name`필드가 이용되는 것을 알아야 한다.<br> 
+이것은 `/workspace-a/package.json`의 `name`필드가 `"pkg-a"`였고, 가명이 `/node_modules/pkg-a -> /workspace-a`을 따르는 것이다.<br> 
+그렇게 하면 `/workspace-a`에 있는 코드를 `const pkgA = require("pkg-a");`을(또는 `import pkgA from "pkg-a";`) 사용해 import 할 수 있다는 것이다.
 
 <br>
 
@@ -115,7 +119,7 @@ Worspace의 동작을 확인하기 위해 깃허브에 올라온 [데모](https:
 루트 폴더에 Host(layout), Remote(home), Remote2(sub)가 되는 프로젝트가 있다. Workspace를 사용하지 않는다면 각 프로젝트마다 노드모듈을 설치해 실행시키겠지만 루트 폴더의 `package.json`에서 프로젝트들을 등록하고 모듈들을 한 번에 관리할 수 있다.
 
 ### package.json
-```vue.js
+```javascript
 {
   "private": true,
   "scripts": {},
