@@ -1,5 +1,5 @@
 # Nuxt와 vue환경의 마이크로 프론트엔드에서의 SEO 작업
-
+>한국외국어대학교 컴퓨터공학과 김준성
 ## nuxt란?
 
 <br>
@@ -57,7 +57,7 @@ qiankun과 nuxt를 기반으로 한 마이크로 프론트엔드의 코드를 �
 
 <br>
 
-![image](https://user-images.githubusercontent.com/74655724/119252929-bc8c0880-bbe9-11eb-851a-976486ab3db8.png)
+![window 오류](https://github.com/jskim16/Nuxt-micro-frontend/blob/main/img/window-is-not-defined.PNG)
 
 <br>
 
@@ -65,7 +65,7 @@ qiankun과 nuxt를 기반으로 한 마이크로 프론트엔드의 코드를 �
 
 <br>
 
-![image](https://user-images.githubusercontent.com/74655724/119252976-e8a78980-bbe9-11eb-9331-1f7a68fa8402.png)
+![spa모드](https://github.com/jskim16/Nuxt-micro-frontend/blob/main/img/spa-mode.PNG)
 
 <br>
 
@@ -73,7 +73,7 @@ spa모드일 땐 페이지가 정상 작동을 하지만 소스를 보면 CSR로
 
 <br>
 
-![image](https://user-images.githubusercontent.com/74655724/119252986-0248d100-bbea-11eb-8045-020920c5cfec.png)
+![universal모드](https://github.com/jskim16/Nuxt-micro-frontend/blob/main/img/universal-mode.PNG)
 
 <br>
 
